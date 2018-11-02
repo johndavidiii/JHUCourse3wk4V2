@@ -1,0 +1,53 @@
+---
+title: "Codebook"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+This is the Codebook markdown document for Course 3, week 4.
+
+This data comes from the wearable computing community. Companines like Fitbit, Nike and Jawbone are trying to attract customers by using very advanced algorithms.  The data for this class has been collected via Samsung Galaxy 5 smartphone accelerometers. The units for acceleration are in m/s^2.  A description of the data is as follows;
+
+Data Set Information:
+
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
+
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
+
+
+
+The full description of the data can be obtained via the following website:
+
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+The original data for this project is located at:
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+
+
+The original data set consists of many .txt files. Per the instructions for this course I melded all of the files together into a single file. The names and data of the melded file is the following; 
+
+Note: the Column Names, in some cases, were changed to to be more descriptive
+
+
+```{r course3, echo=FALSE}
+tmpDF2 <- read.csv("course3_wk4_project_DF_output.csv",stringsAsFactors = FALSE)
+print(names(tmpDF2))
+print("Here is a portion of the Melded Data")
+print(head(tmpDF2,3))
+
+print("Here are the Statistics that the course asks for")
+tmpDF <- read.csv("course3_wk4_project_stats_output.csv", stringsAsFactors = FALSE)
+print("Here are the Column Names of the Statistics File")
+print(names(tmpDF))
+print("Here is a Sample of the Statistics Data")
+print(head(tmpDF,10))
+print(tail(tmpDF,10))
+```
+
